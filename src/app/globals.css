@@ -14,13 +14,74 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
+}
+
+::selection{
+  color: black;
+  background: red;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#smooth-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+#smooth-content {
+  will-change: transform;
+}
+
+@media (min-width: 700px) {
+  @keyframes cardAnimation {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(30px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .card {
+    animation: cardAnimation 3s ease-in-out infinite;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+  }
+}
+
+@media (orientation: landscape) {
+  .footer-section {
+    padding-top: 2.5rem; /* pt-10 */
+  }
 }
