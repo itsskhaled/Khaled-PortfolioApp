@@ -5,6 +5,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { useRef } from "react";
+import { ProjectsHomeData } from "../API/ProjectsHome";
+import Link from "next/link";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 export default function ProjectsCard() {
@@ -15,6 +18,7 @@ export default function ProjectsCard() {
     const yearRef = useRef([]);
     const arrowRef = useRef([]);
     const barRef = useRef([]);
+    const imageProduct = useRef([]);
 
     useGSAP(() => {
 
@@ -154,39 +158,57 @@ export default function ProjectsCard() {
                 }
             })
         })
-
-
     }, [])
+    const handleEnter = (i) => {
+        const img = imageProduct.current[i];
+        gsap.killTweensOf(img);
+        gsap.to(img, {
+            opacity: 1,
+            y: -20,
+            rotate: -5,
+            duration: 0.6,
+            ease: "elastic.out",
+        });
+    };
 
-
-    const projectsList = [
-        { id: 1, nameProject: "Project-1", tags: ["Next.JS", "Tailwind", "Gsap.JS"], year: 2025 },
-        { id: 2, nameProject: "Project-2", tags: ["Next.JS", "Tailwind", "Gsap.JS"], year: 2023 },
-        { id: 3, nameProject: "Project-3", tags: ["React.JS", "CSS", "Gsap.JS"], year: 2024 },
-    ]
+    const handleLeave = (i) => {
+        const img = imageProduct.current[i];
+        gsap.killTweensOf(img);
+        gsap.to(img, {
+            opacity: 0,
+            y: 0,
+            duration: 0.4,
+            ease: "power4.out",
+        });
+    }
     return (
         <div className="grid grid-cols-1 lg:grid-cols-3 w-full mt-35 lg:px-10 items-center">
             <div className="text-3xl lg:text-5xl uppercase">
                 <h1 ref={titleProject}>Our Projects</h1>
             </div>
             <div className="cards w-[90%] lg:w-full m-auto col-span-2">
-                {projectsList.map((item, i) => {
+                {ProjectsHomeData.map((item, i) => {
                     return (
-                        <div key={item.id}>
-                            <div className="group flex justify-between pt-10 pb-10">
-                                <h1 ref={(el) => nameProject.current[i] = el} className="text-sm lg:text-5xl uppercase">{item.nameProject}</h1>
-                                <div ref={(el) => tagsRef.current[i] = el} className="tags flex flex-col lg:flex-row items-center ml-20 gap-2">
-                                    <h1 className="backdrop-blur-lg bg-white/10 py-2 px-4 rounded-xl text-xs lg:text-base">{item.tags[0]}</h1>
-                                    <h1 className="backdrop-blur-lg bg-white/10 py-2 px-4 rounded-xl text-xs lg:text-base">{item.tags[1]}</h1>
-                                    <h1 className="backdrop-blur-lg bg-white/10 py-2 px-4 rounded-xl text-xs lg:text-base">{item.tags[2]}</h1>
+                        <Link href={`/Projects/${item.id}`}>
+                            <div onMouseEnter={() => handleEnter(i)} onMouseLeave={() => handleLeave(i)} key={i}>
+                                <div ref={(image) => imageProduct.current[i] = image} className="absolute w-80 h-45 left-50 -rotate-12 opacity-0">
+                                    <Image src={item.image} alt="" className="w-full h-full object-cover" />
                                 </div>
-                                <div className="flex gap-10 items-center sm:text-xl lg:text-3xl">
-                                    <h1 ref={(el) => yearRef.current[i] = el}>{item.year}</h1>
-                                    <p className="cursor-pointer"><ArrowUpRight ref={(el) => arrowRef.current[i] = el} size={24} color="#FFFFFF" /></p>
+                                <div className="group flex justify-between pt-10 pb-10">
+                                    <h1 ref={(el) => nameProject.current[i] = el} className="text-sm lg:text-5xl uppercase">{item.name}</h1>
+                                    <div ref={(el) => tagsRef.current[i] = el} className="tags flex flex-col lg:flex-row items-center ml-20 gap-2">
+                                        <h1 className="backdrop-blur-lg bg-white/10 py-2 px-4 rounded-xl text-xs lg:text-base">{item.lang[0]}</h1>
+                                        <h1 className="backdrop-blur-lg bg-white/10 py-2 px-4 rounded-xl text-xs lg:text-base">{item.lang[1]}</h1>
+                                        <h1 className="backdrop-blur-lg bg-white/10 py-2 px-4 rounded-xl text-xs lg:text-base">{item.lang[2]}</h1>
+                                    </div>
+                                    <div className="flex gap-10 items-center sm:text-xl lg:text-3xl">
+                                        <h1 ref={(el) => yearRef.current[i] = el}>{item.year}</h1>
+                                        <p className="cursor-pointer"><ArrowUpRight ref={(el) => arrowRef.current[i] = el} size={24} color="#FFFFFF" /></p>
+                                    </div>
                                 </div>
+                                <hr ref={(el) => barRef.current[i] = el} className="opacity-25" />
                             </div>
-                            <hr ref={(el) => barRef.current[i] = el} className="opacity-25" />
-                        </div>
+                        </Link>
                     );
                 })}
 
