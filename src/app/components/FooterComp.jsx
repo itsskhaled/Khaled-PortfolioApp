@@ -137,7 +137,7 @@ export default function FooterComp() {
                         { id: 4, name: "About", href: "/AboutMe" },
                     ].map((item, i) => {
                         return (
-                            <a ref={(el) => LinksRef.current[i] = el} key={i} className="mx-4 inline-block uppercase font-bold" href={item.href}>{item.name}</a>
+                            <a ref={(el) => LinksRef.current[i] = el} key={i} className="mx-4 inline-block uppercase font-bold text-xs sm:text-xs md:text-base lg:text-base" href={item.href}>{item.name}</a>
                         );
                     })
                     }

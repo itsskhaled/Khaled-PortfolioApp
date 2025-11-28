@@ -4,7 +4,8 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import KhaledPhoto from "@/Image/Photo-Khaled.jpg";
+// import KhaledPhoto from "@/Image/Photo-Khaled.jpg";
+import KhaledPhoto from "@/Image/Khaled.jpg";
 
 gsap.registerPlugin(useGSAP);
 
@@ -19,7 +20,7 @@ export default function ParallaxImage() {
         const container = containerRef.current;
 
         const maxMove = 150;
-        const maxRotate = 10; // درجة دوران
+        const maxRotate = 10;
 
         container.addEventListener("mousemove", (e) => {
 

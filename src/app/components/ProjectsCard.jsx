@@ -189,10 +189,10 @@ export default function ProjectsCard() {
             <div className="cards w-[90%] lg:w-full m-auto col-span-2">
                 {ProjectsHomeData.map((item, i) => {
                     return (
-                        <Link href={`/Projects/${item.id}`}>
-                            <div onMouseEnter={() => handleEnter(i)} onMouseLeave={() => handleLeave(i)} key={i}>
-                                <div ref={(image) => imageProduct.current[i] = image} className="absolute w-80 h-45 left-50 -rotate-12 opacity-0">
-                                    <Image src={item.image} alt="" className="w-full h-full object-cover" />
+                        <Link key={i} href={`/Projects/${item.id}`}>
+                            <div onMouseEnter={() => handleEnter(i)} onMouseLeave={() => handleLeave(i)}>
+                                <div ref={(image) => imageProduct.current[i] = image} className="absolute w-65 h-40 lg:w-80 lg:h-45 left-50 -rotate-12 opacity-0">
+                                    <Image src={item.image || null} alt="You have no internet connection👀." className="w-full h-full object-cover rounded-md" />
                                 </div>
                                 <div className="group flex justify-between pt-10 pb-10">
                                     <h1 ref={(el) => nameProject.current[i] = el} className="text-sm lg:text-5xl uppercase">{item.name}</h1>

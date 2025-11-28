@@ -11,18 +11,18 @@ export const ProjectsHomeData = [
   },
   {
     id: "2",
-    slug: "Null",
+    slug: null,
     name: "Null",
     lang: ["null", "null", "null"],
-    year: "null",
+    year: "2025",
     image: null,
   },
   {
     id: "3",
-    slug: "Null",
+    slug: null,
     name: "Null",
     lang: ["null", "null", "null"],
-    year: "null",
+    year: "2025",
     image: null,
   },
 ];
@@ -42,6 +42,6 @@ export const ProjectDetails = [
     Process:
       "The development process involved creating a visually appealing user interface supported by a robust technical structure. Product categories were organized clearly to allow users to easily switch between men's and women's jackets and bags. High-resolution product images, detailed descriptions, and quick-view features were integrated to enhance the shopping experience.Throughout the project, I applied best practices in UI/UX, responsive design, and performance optimization. This included implementing smooth navigation, interactive product animations, and an efficient filtering system to help users find the right items quickly. Additionally, the site was built with scalability in mind, ensuring new categories or products can be added easily in the future.",
     Impact:
-      "The final result is a modern, fast, and user-friendly E-Commerce experience that reflects the brand’s identity while delivering measurable value. Customers enjoy an intuitive browsing journey and a visually rich interface that builds trust and encourages purchases. Whether users are exploring men’s winter jackets, women’s fashion bags, or versatile everyday styles, the platform highlights each product’s value through appealing design and fluid interactions. This project demonstrates my ability to blend technical development with strong visual design, creating a complete shopping experience that supports brand growth and enhances customer satisfaction",
+      "The final result is a modern, fast, and user-friendly E-Commerce experience that reflects the brand’s identity while delivering measurable value. Customers enjoy an intuitive browsing journey and a visually rich interface that builds trust and encourages purchases. Whether users are exploring men’s winter jackets, women’s fashion bags, or versatile everyday styles, the platform highlights each product’s value through appealing design and fluid interactions. This project demonstrates my ability to blend technical development with strong visual design, creating a complete shopping experience that supports brand growth and enhances customer satisfaction.",
   },
 ];

@@ -10,10 +10,10 @@ import { ProjectDetails } from "../API/ProjectsHome";
 gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
 export default function DetailsInfoProject() {
     return (
-        <section  className="w-full h-[150vh] py-30 overflow-visible">
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-[550px_1fr] lg:grid-cols-[700px_1fr]">
-                <div className="relative">
-                    <div className="box sticky top-30 w-full h-[50vh] bg-linear-to-b from-[#FF3B3B] to-[#6A00FF] m-auto mx-10 rounded-xl select-none">
+        <section  className="w-full h-[270vh] sm:h-[270vh] md:h-[300vh] lg:h-[150vh] py-30 overflow-visible">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-[550px_1fr] lg:grid-cols-[700px_1fr] gap-y-40">
+                <div className="relative flex">
+                    <div className="box-1 sticky top-30 w-full h-[50vh] bg-linear-to-b from-[#FF3B3B] to-[#6A00FF] mx-10 rounded-xl select-none text-xs sm:text-xs md:text-xs lg:text-base">
                         <h1 className="py-5 text-3xl uppercase px-7">Project Details</h1>
                         <div className="flex w-[90%] justify-between m-auto border-t items-center">
                             <p className="py-5 uppercase">Owner</p>
@@ -65,7 +65,7 @@ export default function DetailsInfoProject() {
 
                     </div>
                 </div>
-                <div className="">
+                <div className="box-2">
                     <div className="px-15.5">
                         <h1 className="text-5xl pb-5 uppercase">Overview</h1>
                         {ProjectDetails.map((item, i) => {

@@ -27,10 +27,10 @@ export default function DetailsProject({ project }) {
         <>
             <MenuPath />
             <section ref={ContainerRef} className="w-full h-screen relative group">
-                <div className="absolute z-10 flex justify-between items-end pb-10 w-full px-10 inset-0 
+                <div className="absolute z-10 flex flex-col sm:flex-col md:flex-row lg:flex-row justify-end md:justify-between lg:justify-between items-end pb-10 w-full px-10 inset-0 
                 bg-linear-to-t from-black/70 to-transparent">
                     <h1 className="text-5xl">{project.name}</h1>
-                    <div className="flex uppercase gap-10">
+                    <div className="flex uppercase gap-3">
                         <p className="backdrop-blur-lg bg-white text-black py-2 px-4 rounded-md">uxui</p>
                         <p className="backdrop-blur-lg bg-white text-black py-2 px-4 rounded-md">coding</p>
                     </div>
