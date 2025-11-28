@@ -55,10 +55,10 @@ export default function DetailsInfoProject() {
                                 );
                             })}
                         </div>
-                        <br /><br />
+                        
                         <Link href="https://urbanzo.vercel.app">
                             <button
-                                className="uppercase bg-red-700 text-white w-full py-4 rounded-md drop-shadow-[0_0_10px_#b91c1c] hover:drop-shadow-[0_0_20px_#dc2626] shadow-[inset_0_0_25px_rgba(255,255,255,0.4)] translate duration-300 cursor-pointer">
+                                className="uppercase mt-7 bg-red-700 text-white w-full py-4 rounded-md drop-shadow-[0_0_10px_#b91c1c] hover:drop-shadow-[0_0_20px_#dc2626] shadow-[inset_0_0_25px_rgba(255,255,255,0.4)] translate duration-300 cursor-pointer">
                                 Launch Project
                             </button>
                         </Link>
