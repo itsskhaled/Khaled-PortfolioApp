@@ -84,7 +84,7 @@ export default function MoreAboutMe() {
     })
 
     return (
-        <section ref={ContainerRef} className="w-full h-[150vh] landscape:min-h-[600px]">
+        <section ref={ContainerRef} className="w-full h-[150vh] landscape-mobile-Aboutme">
             <h1 ref={TitleAboutRef} className="text-center text-7xl sm:text-7xl md:text-9xl lg:text-[20rem] my-20 sm:my-20 lg:my-10 uppercase">about me</h1>
             <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 w-full h-screen ">
                 <div className="title text-center sm:text-center md:text-left lg:text-left text-2xl sm:text-2xl md:text-3xl lg:text-4xl uppercase py-10 px-20">

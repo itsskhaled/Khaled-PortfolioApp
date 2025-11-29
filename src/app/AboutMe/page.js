@@ -18,7 +18,9 @@ export default function AboutMe() {
       <MenuPath />
       <LayoutSmoother>
         <MoreAboutMe />
+        <div className="landscape-mobile-Aboutme-OurProject">
         <ProjectsPage />
+        </div>
         <ContactPage />
         <Footer />
       </LayoutSmoother>

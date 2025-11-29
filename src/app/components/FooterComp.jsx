@@ -125,7 +125,7 @@ export default function FooterComp() {
 
 
     return (
-        <section ref={ContainarRef} className="max-w-full min-h-[50vh] sm:min-h-[50vh] lg:min-h-[90vh] footer-section pt-5 sm:pt-10">
+        <section ref={ContainarRef} className="max-w-full min-h-[50vh] sm:min-h-[50vh] lg:min-h-[90vh] pt-5 sm:pt-10 landscape-mobile-footer">
             <div className="flex flex-col justify-center items-center w-full h-[90vh] leading-loose">
                 <h1 ref={TitleFooterRef} className="text:xl sm:text:xl md:text-2xl lg:text-4xl text-center uppercase mb-10">Let’s build something great together</h1>
                 <p ref={GmailRef} className="text-lg my-5 hover:text-red-700 transition-all duration-300 delay-200 uppercase font-bold"><a href="#">Contact me at : khaled@gmail.com</a></p>
@@ -143,9 +143,9 @@ export default function FooterComp() {
                     }
                 </nav>
                 <hr ref={hrRef} className="w-full h-px mt-10 opacity-20" />
-                <div className="flex flex-col sm:flex-col lg:flex-row text-center justify-between w-[95%] absolute bottom-10">
+                <div className="flex flex-col sm:flex-col lg:flex-row text-center justify-between w-[95%] absolute bottom-10 landscape-mobile-footer">
                     <h1 ref={nameRef} className="uppercase text-8xl sm:text-8xl lg:text-9xl">Khaled</h1>
-                    <p ref={RightRef} className="flex items-end m-auto sm:m-auto md:m-auto lg:mr-5">© 2025 Khaled — All Rights Reserved.</p>
+                    <p ref={RightRef} className="flex items-end m-auto sm:m-auto md:m-auto lg:mr-5 landscape-mobile-footer-CopeRight">© 2025 Khaled — All Rights Reserved.</p>
                 </div>
             </div>
         </section>

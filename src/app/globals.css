@@ -80,8 +80,23 @@ body {
   }
 }
 
-@media (orientation: landscape) {
-  .footer-section {
-    padding-top: 2.5rem; /* pt-10 */
+
+@media (max-width: 850px) and (orientation: landscape) {
+  .landscape-mobile-h {
+    height: 300vh;
+  }
+
+  .landscape-mobile-footer{
+    height: 100vh;
+  }
+  .landscape-mobile-footer-CopeRight {
+    padding-top: 17rem;
+  }
+
+  .landscape-mobile-Aboutme {
+    height: 400vh;
+  }
+  .landscape-mobile-Aboutme-OurProject {
+    height: 400vh;
   }
 }
