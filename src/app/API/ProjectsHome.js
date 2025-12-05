@@ -1,5 +1,5 @@
 import Ecommerce from "@/Image/E-Commerce (2).png";
-
+import FlashCode from "@/Image/FlashCode.png";
 export const ProjectsHomeData = [
   {
     id: "1",
@@ -8,22 +8,15 @@ export const ProjectsHomeData = [
     lang: ["Next js", "Tailwind", "Gsap js"],
     year: "2025",
     image: Ecommerce,
+    href: "https://urbanzo.vercel.app/",
   },
   {
     id: "2",
-    slug: null,
-    name: "Null",
-    lang: ["null", "null", "null"],
+    slug: "FlashCode-LandingPage",
+    name: "FlashCode | LandingPage",
+    lang: ["Next js", "Tailwind", "Gsap js"],
     year: "2025",
-    image: null,
-  },
-  {
-    id: "3",
-    slug: null,
-    name: "Null",
-    lang: ["null", "null", "null"],
-    year: "2025",
-    image: null,
+    image: FlashCode,
+    href: "https://flashcode-app.vercel.app/",
   },
 ];
-

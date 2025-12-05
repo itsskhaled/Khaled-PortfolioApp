@@ -92,7 +92,7 @@ export default function DetailsProject({ project, projectinfo }) {
                                     <p>{projectinfo.Budget}</p>
                                 </div>
                             </div>
-                            <Link href="https://urbanzo.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <Link href={projectinfo.href} target="_blank" rel="noopener noreferrer">
                                 <div className="my-10 mx-10">
                                     <button className="uppercase w-full py-4 bg-red-700 drop-shadow-[0_0_10px_#b91c1c] shadow-[inset_0_0_25px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_20px_#dc2626] translate duration-300 cursor-pointer rounded-md">Launch Project</button>
                                 </div>
