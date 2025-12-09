@@ -3,8 +3,7 @@ import MenuPath from "../components/MenuPath";
 import ContactPage from "../Contact/page";
 import Footer from "../Footer/page";
 import LayoutSmoother from "../LayoutSmoother";
-import ProjectsPage from "../Projects/page";
-import Skils from "../Skils/page";
+// import ProjectsPage from "../Projects/page";
 
 export const metadata = {
   title: "KHALED | ABOUT ME",
@@ -19,7 +18,7 @@ export default function AboutMe() {
       <LayoutSmoother>
         <MoreAboutMe />
         <div className="landscape-mobile-Aboutme-OurProject">
-        <ProjectsPage />
+        {/* <ProjectsPage /> */}
         </div>
         <ContactPage />
         <Footer />

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import imgAbout from "@/Image/Photo-Khaled.jpg";
+import imgAbout from "@/Image/Khaled.jpg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
