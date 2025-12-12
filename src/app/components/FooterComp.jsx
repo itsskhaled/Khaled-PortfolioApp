@@ -131,10 +131,11 @@ export default function FooterComp() {
                 <p ref={GmailRef} className="text-lg my-5 hover:text-red-700 transition-all duration-300 delay-200 uppercase font-bold"><a href="#">Contact me at : khaled@gmail.com</a></p>
                 <nav>
                     {[
-                        { id: 1, name: "GitHub", href: "#" },
-                        { id: 2, name: "LinkedIn", href: "#" },
-                        { id: 3, name: "Projects", href: "/AllProjects" },
-                        { id: 4, name: "About", href: "/AboutMe" },
+                        { id: 1, name: "GitHub", href: "https://github.com/itsskhaled" },
+                        { id: 2, name: "LinkedIn", href: "www.linkedin.com/in/khaled-alhaj-8a5376261" },
+                        { id: 3, name: "Upwork", href: "https://www.upwork.com/freelancers/~01152930a27dbe675a" },
+                        { id: 4, name: "Projects", href: "/AllProjects" },
+                        { id: 5, name: "About", href: "/AboutMe" },
                     ].map((item, i) => {
                         return (
                             <a ref={(el) => LinksRef.current[i] = el} key={i} className="mx-4 inline-block uppercase font-bold text-xs sm:text-xs md:text-base lg:text-base" href={item.href}>{item.name}</a>

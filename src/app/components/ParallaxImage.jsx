@@ -4,7 +4,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-// import KhaledPhoto from "@/Image/Photo-Khaled.jpg";
 import KhaledPhoto from "@/Image/Khaled.jpg";
 
 gsap.registerPlugin(useGSAP);
@@ -63,7 +62,7 @@ export default function ParallaxImage() {
         >
             <div
                 ref={imgRef}
-                className="relative w-[300px] h-[400px]  sm:w-[300px] sm:h-[400px] md:w-[350px] md:h-[450px] lg:w-[400px] lg:h-[500px]"
+                className="relative w-[300px] h-[400px] sm:w-[300px] sm:h-[400px] md:w-[350px] md:h-[450px] lg:w-[400px] lg:h-[500px]"
             >
                 <Image
                     src={KhaledPhoto}
