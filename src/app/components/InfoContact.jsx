@@ -84,14 +84,14 @@ export default function InfoContact() {
             </h1>
 
             <h1 ref={titleRef}
-                className="relative bottom-30 max-w-[40%] m-auto uppercase mb-5 text-2xl sm:text-2xl md:text-3xl lg:text-5xl"
+                className="relative bottom-30 max-w-[40%] m-auto uppercase mb-5 text-xl sm:text-xl md:text-3xl lg:text-5xl"
             >
                 Ready to Transform Your Vision?
             </h1>
             <h1 ref={infoRef}
-                className="relative bottom-30  m-auto uppercase max-w-[60%] sm:max-w-[60%] lg:max-w-[35%] text-ms sm:text-ms md:text-lg lg:text-lg"
+                className="relative bottom-30 m-auto uppercase w-[250px] sm:w-[250px] md:w-[550px] lg:w-[600px] text-2xs sm:text-2xs md:text-xl lg:text-xl"
             >
-                Let's discuss how we can bring your ideas to <br /> life. Book a quick call with our team, and<br /> we'll guide you through the next steps.
+                Let`s discuss how we can bring your ideas to life. Book a quick call with our team, and we`ll guide you through the next steps.
             </h1>
             <div ref={btnRef}>
                 <Link href="https://wa.me/972599718309?text=Hello, Let's turn your idea into a digital website" target="_blank" rel="noopener noreferrer">

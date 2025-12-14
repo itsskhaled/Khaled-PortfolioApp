@@ -47,7 +47,7 @@ export default function BtnMoving({ text }) {
     return (
         <button
             ref={BtnRef}
-            className="uppercase bg-red-700 drop-shadow-[0_0_10px_#b91c1c] shadow-[inset_0_0_25px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_20px_#dc2626] translate duration-300 font-bold rounded-md cursor-pointer relative bottom-20 py-4 px-7"
+            className="uppercase bg-red-700 drop-shadow-[0_0_10px_#b91c1c] shadow-[inset_0_0_25px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_20px_#dc2626] translate duration-300 font-bold rounded-md cursor-pointer relative bottom-20 py-4 px-7 text-xs sm:text-xs md:text-base lg:text-base"
         >
             {text}
         </button>

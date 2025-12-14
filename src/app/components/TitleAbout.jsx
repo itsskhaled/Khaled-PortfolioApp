@@ -89,7 +89,7 @@ export default function TitleAbout() {
                 <h1 ref={titleAboutRef} className="text-red-700 font-bold relative bottom-45 tracking-[1rem] uppercase">
                     About
                 </h1>
-                <h1 ref={infoAboutRef} className="relative bottom-30 max-w-[65%] m-auto uppercase text-2xl sm:text-2xl md:text-3xl lg:text-5xl">
+                <h1 ref={infoAboutRef} className="relative bottom-30 w-[65%] m-auto uppercase text-2xs sm:text-2xl md:text-3xl lg:text-5xl">
                     I’m a front-end developer specializing in modern UI and smooth motion
                     design. I create clean, dynamic interfaces using React, Next.js,
                     Tailwind CSS, and GSAP to deliver engaging user experiences.
