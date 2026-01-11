@@ -182,6 +182,7 @@ export default function ProjectsCard() {
         });
     }
     return (
+        <section className="w-full py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 w-full mt-35 lg:px-10 items-center">
             <div className="text-3xl lg:text-5xl uppercase">
                 <h1 ref={titleProject}>Our Projects</h1>
@@ -214,5 +215,6 @@ export default function ProjectsCard() {
 
             </div>
         </div>
+        </section>
     );
 }

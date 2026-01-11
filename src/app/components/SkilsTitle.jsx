@@ -57,7 +57,7 @@ export default function SkilsTitle() {
         }, ">");
     }, [])
     return (
-        <>
+        <section className="w-full pt-60">
             <div ref={ContainerRef} className="flex landscape:mt-100 flex-col md:flex-row lg:flex-row justify-between items-center pt-100 lg:pt-20 pr-10 lg:px-10">
                 <div>
                     <h1 className="text-red-700 uppercase mb-8 tracking-[0.5rem]" ref={CreationsRef}>capabilities</h1>
@@ -79,6 +79,6 @@ export default function SkilsTitle() {
                 </Link>
             </div>
             <hr ref={barHrRef} className="opacity-10 w-[95%] m-auto relative top-10 " />
-        </>
+        </section>
     );
 }

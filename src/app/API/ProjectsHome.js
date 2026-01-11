@@ -1,5 +1,7 @@
 import Ecommerce from "@/Image/E-Commerce (2).png";
 import FlashCode from "@/Image/FlashCode.png";
+import nuail from "@/Image/nuail.jpg";
+import granova from "@/Image/granova.png";
 export const ProjectsHomeData = [
   {
     id: "1",
@@ -18,5 +20,23 @@ export const ProjectsHomeData = [
     year: "2025",
     image: FlashCode,
     href: "https://flashcode-app.vercel.app/",
+  },
+  {
+    id: "3",
+    slug: "nuail-LandingPage",
+    name: "nuail | LandingPage",
+    lang: ["Next js", "Tailwind", "Gsap js"],
+    year: "2026",
+    image: nuail,
+    href: "https://nuail.vercel.app/",
+  },
+  {
+    id: "4",
+    slug: "Granova-LandingPage",
+    name: "granova | LandingPage",
+    lang: ["Next js", "Tailwind", "Gsap js"],
+    year: "2026",
+    image: granova,
+    href: "https://granova-store.vercel.app/",
   },
 ];
