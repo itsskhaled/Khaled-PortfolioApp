@@ -5,10 +5,29 @@ import Footer from "../Footer/page";
 import LayoutSmoother from "../LayoutSmoother";
 // import ProjectsPage from "../Projects/page";
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://khaled-portfolio-app.vercel.app';
+
 export const metadata = {
-  title: "KHALED | ABOUT ME",
+  title: "About Me",
   description:
-    "Khaled – Front-end developer specializing in modern websites, animations, and high-performance UI experiences.",
+    "Learn more about Khaled, a Front-End Engineer specializing in modern websites, animations, and high-performance UI experiences. Discover my journey, skills, and passion for creating engaging digital experiences.",
+  keywords: [
+    "About Khaled",
+    "Front-End Engineer",
+    "Web Developer",
+    "UI/UX Designer",
+    "Portfolio",
+    "Developer Bio",
+  ],
+  openGraph: {
+    title: "About Me - Khaled Portfolio",
+    description: "Learn more about Khaled, a Front-End Engineer specializing in modern websites, animations, and high-performance UI experiences.",
+    url: `${baseUrl}/AboutMe`,
+    type: "website",
+  },
+  alternates: {
+    canonical: `${baseUrl}/AboutMe`,
+  },
 };
 
 export default function AboutMe() {
