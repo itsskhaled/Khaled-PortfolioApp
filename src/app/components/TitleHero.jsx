@@ -14,12 +14,13 @@ export default function TitleHero() {
 
         const split = new SplitText(titleRef.current, {
             type: "lines",
-            mask: "lines"
+            mask: "lines",
+            autoSplit: true
         });
 
         gsap.from(split.lines, {
             y: 100,
-            rotateY: 180,    
+            rotateY: 180,
             opacity: 0,
             ease: "power2.out",
             stagger: { each: 0.15 },

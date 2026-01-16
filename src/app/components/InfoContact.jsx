@@ -19,17 +19,17 @@ export default function InfoContact() {
         const headSplit = new SplitText(headTitleRef.current, {
             type: "words",
             mask: "words",
-            smartWrap: true
+            autoSplit: true
         });
         const titleSplit = new SplitText(titleRef.current, {
             type: "words",
             mask: "words",
-            smartWrap: true
+            autoSplit: true
         });
         const infoSplit = new SplitText(infoRef.current, {
             type: "lines",
             mask: "lines",
-            smartWrap: true
+            autoSplit: true
         });
 
         const tl = gsap.timeline({
