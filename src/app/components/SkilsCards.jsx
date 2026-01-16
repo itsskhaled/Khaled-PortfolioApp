@@ -1,98 +1,130 @@
 "use client";
 import { useRef } from "react";
-import "../globals.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
+import { MotionPathPlugin, ScrollTrigger } from "gsap/all";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(useGSAP, ScrollTrigger, MotionPathPlugin);
 export default function SkilsCards() {
+    const contaninerRef = useRef(null);
 
-    const cardRef = useRef([]);
+    const FrontRef = useRef(null);
+    const DesignRef = useRef(null);
+    const ToolsRef = useRef(null);
+
+    const borderFrontRef = useRef(null);
+    const borderDesignRef = useRef(null);
+    const borderToolsRef = useRef(null);
+
     useGSAP(() => {
 
         const mm = gsap.matchMedia();
-        mm.add({
-            isMobile: '(max-width:701px)',
-            isDesktop: '(min-width:700px)',
-        }, (context) => {
-            const { isMobile, isDesktop } = context.conditions;
+        mm.add("(min-width: 1024px)", () => {
+            const xy = { x: 0, y: 0 };
 
-            if (isMobile) {
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".card-wrapper",
-                        start: "top bottom",
-                        end: "+=500",
-                        scrub: true,
-                    }
-                });
+            const CardSkillsFront = MotionPathPlugin.convertCoordinates(borderFrontRef.current, FrontRef.current, xy);
+            const CardSkillsTools = MotionPathPlugin.convertCoordinates(borderToolsRef.current, ToolsRef.current, xy);
 
-                tl.from(cardRef.current, {
-                    opacity: 0,
-                    ease: "power2.inOut",
-                    stagger: { each: 0.15 }
-                })
-            } else if (isDesktop) {
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".card-wrapper",
-                        start: "top 10%",
-                        end: "+=900",
-                        scrub: true,
-                        pin: true,
-                    }
-                });
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: contaninerRef.current,
+                    start: "top top",
+                    end: "+=1000px",
+                    scrub: 1,
+                    pin: true,
+                    pinSpacing: true
+                    // markers: true
+                }
+            });
 
-                tl.from(cardRef.current, {
-                    opacity: 0,
-                    ease: "power2.inOut",
-                    stagger: { each: 0.15 }
-                })
-            }
-        })
-
-    })
-    const infoCardSkils = [
-        {
-            id: 1,
-            nameCard: "Front-End Development",
-            lang: ["Next.JS", "React.JS", "Gsap.JS", "Tailwind CSS"],
-            numberCard: "01"
-        },
-        {
-            id: 2,
-            nameCard: "UI / UX Design",
-            lang: ["Responsive Design", "Web Animations", "Figma" , "Components Architecture"],
-            numberCard: "02"
-        },
-        {
-            id: 3,
-            nameCard: "Tools & Workflow",
-            lang: ["Git / GitHub", "VS Code", "npm / yarn", "Performance Optimization"],
-            numberCard: "03"
-        },
-    ];
-
+            tl.to(FrontRef.current, { x: "+=" + CardSkillsFront.x, y: "+=" + CardSkillsFront.y, ease: "none" }, 0)
+                .to(ToolsRef.current, { x: "+=" + CardSkillsTools.x, y: "+=" + CardSkillsTools.y, ease: "none" }, 0)
+        });
+    });
     return (
-        <div className="relative card-wrapper h-screen w-full">
-            <div className=" flex justify-center mt-15 flex-col landscape:flex-row lg:flex-row gap-5">
-                {infoCardSkils.map((card, i) => {
-                    return (
-                        <div ref={(el) => cardRef.current[i] = el} key={card.id} className="card cardAnimation bg-neutral-950 text-black p-10 w-[250px] h-[350px] lg:w-[400px] lg:h-[600px] m-auto rounded-xl"
-                            style={{ animationDelay: `${i * 0.3}s` }}>
-                            <h1 className="text-xl lg:text-3xl pb-10 lg:pb-20 font-bold text-white">{card.nameCard}</h1>
-                            <ul>
-                                {card.lang.map((lang, index) => {
-                                    return (
-                                        <li key={index} className="my-5 lg:my-8 text-xs lg:text-lg border-b border-dashed border-white text-white">{lang}</li>
-                                    );
-                                })}
-                            </ul>
-                            <h1 className="flex justify-end text-5xl text-red-700 font-bold">{card.numberCard}</h1>
-                        </div>
-                    );
-                })}
+        <div ref={contaninerRef} className="w-full relative py-30">
+            <div className="relative hidden lg:flex w-full justify-center gap-30">
+                <div ref={FrontRef} className="w-100 h-130 absolute z-30 rounded-xl">
+                    <div className="card bg-neutral-950 h-full py-10 px-10 rounded-xl">
+                        <h1 className="text-3xl">Front-End Development</h1>
+                        <ul className="mt-20">
+                            <li className="mb-8 border-b">Next JS</li>
+                            <li className="mb-8 border-b">React JS</li>
+                            <li className="mb-8 border-b">Tailwind CSS</li>
+                            <li className="mb-8 border-b">GSAP</li>
+                        </ul>
+                        <h1 className="absolute bottom-10 text-5xl text-red-800 font-bold">01</h1>
+                    </div>
+                </div>
+                <div ref={DesignRef} className="w-100 h-130 absolute z-20 rounded-xl">
+                    <div className="card card-2 bg-neutral-950 h-full py-10 px-10 rounded-xl">
+                        <h1 className="text-3xl">UI / UX Design</h1>
+                        <ul className="mt-20">
+                            <li className="mb-8 border-b">Responsive Design</li>
+                            <li className="mb-8 border-b">Web Animations</li>
+                            <li className="mb-8 border-b">Adobe XD</li>
+                            <li className="mb-8 border-b">Components Archotecture</li>
+                        </ul>
+                        <h1 className="absolute bottom-10 text-5xl text-red-800 font-bold">02</h1>
+                    </div>
+                </div>
+                <div ref={ToolsRef} className="w-100 h-130 absolute z-20 rounded-xl">
+                    <div className="card card-3 bg-neutral-950 h-full py-10 px-10 rounded-xl">
+                        <h1 className="text-3xl">Tools & WorkFlow</h1>
+                        <ul className="mt-20">
+                            <li className="mb-8 border-b">Git / GitHub</li>
+                            <li className="mb-8 border-b">VS Code / Cursor</li>
+                            <li className="mb-8 border-b">NPM / YARN</li>
+                            <li className="mb-8 border-b">Performance Optimization</li>
+                        </ul>
+                        <h1 className="absolute bottom-10 text-5xl text-red-800 font-bold">03</h1>
+                    </div>
+                </div>
+            </div>
+
+             {/* =========== Mobile Component =========== */}
+            <div className="relative flex flex-col lg:hidden w-full items-center gap-30">
+                <div className="w-100 h-130 relative z-30 rounded-xl">
+                    <div className="bg-neutral-950 h-full py-10 px-10 rounded-xl">
+                        <h1 className="text-3xl">Front-End Development</h1>
+                        <ul className="mt-20">
+                            <li className="mb-8 border-b">Next JS</li>
+                            <li className="mb-8 border-b">React JS</li>
+                            <li className="mb-8 border-b">Tailwind CSS</li>
+                            <li className="mb-8 border-b">GSAP</li>
+                        </ul>
+                        <h1 className="absolute bottom-10 text-5xl text-red-800 font-bold">01</h1>
+                    </div>
+                </div>
+                <div className="w-100 h-130 relative z-20 rounded-xl">
+                    <div className="bg-neutral-950 h-full py-10 px-10 rounded-xl">
+                        <h1 className="text-3xl">UI / UX Design</h1>
+                        <ul className="mt-20">
+                            <li className="mb-8 border-b">Responsive Design</li>
+                            <li className="mb-8 border-b">Web Animations</li>
+                            <li className="mb-8 border-b">Adobe XD</li>
+                            <li className="mb-8 border-b">Components Archotecture</li>
+                        </ul>
+                        <h1 className="absolute bottom-10 text-5xl text-red-800 font-bold">02</h1>
+                    </div>
+                </div>
+                <div className="w-100 h-130 relative z-20 rounded-xl">
+                    <div className="bg-neutral-950 h-full py-10 px-10 rounded-xl">
+                        <h1 className="text-3xl">Tools & WorkFlow</h1>
+                        <ul className="mt-20">
+                            <li className="mb-8 border-b">Git / GitHub</li>
+                            <li className="mb-8 border-b">VS Code / Cursor</li>
+                            <li className="mb-8 border-b">NPM / YARN</li>
+                            <li className="mb-8 border-b">Performance Optimization</li>
+                        </ul>
+                        <h1 className="absolute bottom-10 text-5xl text-red-800 font-bold">03</h1>
+                    </div>
+                </div>
+            </div>
+            <div className="hidden lg:flex w-full justify-center gap-30">
+                <div ref={borderFrontRef} className="w-100 h-130 " />
+                <div ref={borderDesignRef} className="w-100 h-130 " />
+                <div ref={borderToolsRef} className="w-100 h-130 " />
             </div>
         </div>
     );

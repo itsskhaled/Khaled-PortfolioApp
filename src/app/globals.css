@@ -59,6 +59,12 @@ body {
   .card {
     animation: cardAnimation 3s ease-in-out infinite;
   }
+  .card-2 {
+    animation-delay: 0.5s;
+  }
+  .card-3 {
+    animation-delay: 1s;
+  }
 
   ::-webkit-scrollbar {
     width: 5px;
