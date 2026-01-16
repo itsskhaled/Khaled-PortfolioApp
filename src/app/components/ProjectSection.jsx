@@ -5,11 +5,10 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { useRef } from "react";
 import Link from "next/link";
+import Cards from "./Cards";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
-
-export default function ProjectsTitle() {
-
+export default function ProjectsSection() {
     const CreationsRef = useRef(null);
     const AmazingRef = useRef(null);
     const BtnRef = useRef(null);
@@ -60,8 +59,8 @@ export default function ProjectsTitle() {
         }, ">");
     }, [])
     return (
-        <>
-            <div id="Projects" className="continar flex flex-col md:flex-row lg:flex-row justify-between items-center pt-50 pr-10 lg:px-10">
+        <section className="w-full relative">
+            <div id="Projects" className="continar relative flex flex-col md:flex-row lg:flex-row justify-between items-center pt-50 pr-10 lg:px-10">
                 <div>
                     <h1 className="text-red-700 uppercase mb-8 tracking-[0.5rem]" ref={CreationsRef}>Creations</h1>
                     <h1
@@ -80,6 +79,12 @@ export default function ProjectsTitle() {
                 </Link>
             </div>
             <hr ref={barHrRef} className="opacity-10 w-[95%] m-auto relative top-10 " />
-        </>
+
+            {/* ===== Cards ====== */}
+
+          
+                <Cards />
+          
+        </section>
     );
 }

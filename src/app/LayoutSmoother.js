@@ -12,7 +12,7 @@ export default function LayoutSmoother({ children }) {
     ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 2,
+      smooth: 1.5,
       effects: true,
     });
   }, []);
