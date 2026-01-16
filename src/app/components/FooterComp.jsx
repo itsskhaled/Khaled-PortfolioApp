@@ -123,6 +123,28 @@ export default function FooterComp() {
         })
     })
 
+    const onMouseEnterText = () => {
+        const khaledEvent = gsap.utils.toArray(".khaledEvent");
+        new SplitText(khaledEvent, {
+            type: "chars",
+            onSplit: (self) => {
+                gsap.fromTo(self.chars, { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        ease: "back",
+                        stagger: {
+                            amount: .3,
+                            from: "random"
+                        }
+                    }
+
+
+                )
+            }
+        })
+    }
+
 
     return (
         <section ref={ContainarRef} className="max-w-full min-h-[50vh] sm:min-h-[50vh] lg:min-h-[90vh] pt-5 sm:pt-10 landscape-mobile-footer">
@@ -144,8 +166,8 @@ export default function FooterComp() {
                 </nav>
                 <hr ref={hrRef} className="w-full h-px mt-10 opacity-20" />
                 <div className="flex flex-col sm:flex-col lg:flex-row text-center justify-between w-[95%] absolute bottom-10 landscape-mobile-footer">
-                    <h1 ref={nameRef} className="uppercase text-7xl sm:text-7xl md:text-8xl lg:text-9xl">Khaled</h1>
-                    <p ref={RightRef} className="flex items-end m-auto sm:m-auto md:m-auto lg:mr-5 landscape-mobile-footer-CopeRight">© 2025 Khaled — All Rights Reserved.</p>
+                    <h1 onMouseEnter={onMouseEnterText} ref={nameRef} className="khaledEvent uppercase text-7xl sm:text-7xl md:text-8xl lg:text-9xl">Khaled</h1>
+                    <p ref={RightRef} className="flex items-end m-auto sm:m-auto md:m-auto lg:mr-5 landscape-mobile-footer-CopeRight">© {new Date().getFullYear()} Khaled — All Rights Reserved</p>
                 </div>
             </div>
         </section>
